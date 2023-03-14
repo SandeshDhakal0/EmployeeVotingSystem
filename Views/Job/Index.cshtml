@@ -13,13 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.jobtitle)
+                Job Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.minsalary)
+                Job Title
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.maxsalary)
+               Min Salary
+            </th>
+            <th>
+                Max Salary
             </th>
             <th></th>
         </tr>
@@ -27,6 +30,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobid)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.jobtitle)
             </td>

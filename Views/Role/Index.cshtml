@@ -13,13 +13,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.jobid)
+                Role Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.title)
+                Job Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.description)
+                Title
+            </th>
+            <th>
+                Description
             </th>
             <th></th>
         </tr>
@@ -27,6 +30,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.roleid)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.jobid)
             </td>

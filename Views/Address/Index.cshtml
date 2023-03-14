@@ -13,19 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.street_no)
+                Address Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.postal_code)
+                Street No
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.address_type)
+                Postal Code
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.city)
+                Address Type
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.country)
+                City
+            </th>
+            <th>
+                Country
             </th>
             <th></th>
         </tr>
@@ -33,6 +36,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.address_id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.street_no)
             </td>

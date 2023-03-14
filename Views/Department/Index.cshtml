@@ -13,7 +13,10 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.departmentname)
+                Department Id
+            </th>
+            <th>
+               Department Name
             </th>
             <th></th>
         </tr>
@@ -21,6 +24,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.departmentid)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.departmentname)
             </td>

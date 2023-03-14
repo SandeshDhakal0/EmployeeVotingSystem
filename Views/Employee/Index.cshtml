@@ -13,19 +13,22 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.employeename)
+                Employee Id
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.dob)
+                Employee Name 
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.contact)
+               DOB
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.roleid)
+               Contact
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.departmentid)
+                Role Id
+            </th>
+            <th>
+                Department Id
             </th>
             <th></th>
         </tr>
@@ -33,6 +36,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.employeeid)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.employeename)
             </td>
@@ -53,6 +59,8 @@
                 <a asp-action="Details" asp-route-id="@item.employeeid">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.employeeid">Delete</a>
             </td>
+            
+            
         </tr>
 }
     </tbody>

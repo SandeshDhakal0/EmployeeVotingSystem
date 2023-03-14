@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using EmployeeVotingSystem.Models;
 
+
 namespace EmployeeVotingSystem.Controllers
 {
     public class EmployeeController : Controller
@@ -21,9 +22,11 @@ namespace EmployeeVotingSystem.Controllers
         // GET: Employee
         public async Task<IActionResult> Index()
         {
-              return _context.Employee != null ? 
-                          View(await _context.Employee.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+            
+            return _context.Employee != null ?
+            View(await _context.Employee.ToListAsync()) :
+            Problem("Entity set 'ApplicationDbContext.Employee'  is null.");
+
         }
 
         // GET: Employee/Details/5
