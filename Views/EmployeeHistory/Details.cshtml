@@ -1,0 +1,48 @@
+@model EmployeeVotingSystem.Models.EmployeeHistory
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>EmployeeHistory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.employeeid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.employeeid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.departmentid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.departmentid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.roleid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.roleid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.startdate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.startdate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.enddate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.enddate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.historyid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

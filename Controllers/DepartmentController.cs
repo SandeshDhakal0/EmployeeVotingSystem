@@ -27,7 +27,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Department/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null || _context.Department == null)
             {
@@ -35,7 +35,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var department = await _context.Department
-                .FirstOrDefaultAsync(m => m.dep_id == id);
+                .FirstOrDefaultAsync(m => m.departmentid == id);
             if (department == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("dep_id,dep_name")] Department department)
+        public async Task<IActionResult> Create([Bind("departmentid,departmentname")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Department/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null || _context.Department == null)
             {
@@ -87,9 +87,9 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("dep_id,dep_name")] Department department)
+        public async Task<IActionResult> Edit(string id, [Bind("departmentid,departmentname")] Department department)
         {
-            if (id != department.dep_id)
+            if (id != department.departmentid)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DepartmentExists(department.dep_id))
+                    if (!DepartmentExists(department.departmentid))
                     {
                         return NotFound();
                     }
@@ -118,7 +118,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Department/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null || _context.Department == null)
             {
@@ -126,7 +126,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var department = await _context.Department
-                .FirstOrDefaultAsync(m => m.dep_id == id);
+                .FirstOrDefaultAsync(m => m.departmentid == id);
             if (department == null)
             {
                 return NotFound();
@@ -138,7 +138,7 @@ namespace EmployeeVotingSystem.Controllers
         // POST: Department/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Department == null)
             {
@@ -154,9 +154,9 @@ namespace EmployeeVotingSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DepartmentExists(int id)
+        private bool DepartmentExists(string id)
         {
-          return (_context.Department?.Any(e => e.dep_id == id)).GetValueOrDefault();
+          return (_context.Department?.Any(e => e.departmentid == id)).GetValueOrDefault();
         }
     }
 }

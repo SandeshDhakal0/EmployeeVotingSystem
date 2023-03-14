@@ -12,21 +12,21 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="RoleID" />
+            <input type="hidden" asp-for="roleid" />
             <div class="form-group">
-                <label asp-for="RoleName" class="control-label"></label>
-                <input asp-for="RoleName" class="form-control" />
-                <span asp-validation-for="RoleName" class="text-danger"></span>
+                <label asp-for="jobid" class="control-label"></label>
+                <input asp-for="jobid" class="form-control" />
+                <span asp-validation-for="jobid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="RoleType" class="control-label"></label>
-                <input asp-for="RoleType" class="form-control" />
-                <span asp-validation-for="RoleType" class="text-danger"></span>
+                <label asp-for="title" class="control-label"></label>
+                <input asp-for="title" class="form-control" />
+                <span asp-validation-for="title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="JobID" class="control-label"></label>
-                <input asp-for="JobID" class="form-control" />
-                <span asp-validation-for="JobID" class="text-danger"></span>
+                <label asp-for="description" class="control-label"></label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

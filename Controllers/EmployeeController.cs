@@ -27,7 +27,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Employee/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null || _context.Employee == null)
             {
@@ -35,7 +35,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmpID == id);
+                .FirstOrDefaultAsync(m => m.employeeid == id);
             if (employee == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EmpID,EmpName,dob,contact,dept_id,role_id")] Employee employee)
+        public async Task<IActionResult> Create([Bind("employeeid,employeename,dob,contact,roleid,departmentid")] Employee employee)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Employee/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null || _context.Employee == null)
             {
@@ -87,9 +87,9 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EmpID,EmpName,dob,contact,dept_id,role_id")] Employee employee)
+        public async Task<IActionResult> Edit(string id, [Bind("employeeid,employeename,dob,contact,roleid,departmentid")] Employee employee)
         {
-            if (id != employee.EmpID)
+            if (id != employee.employeeid)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.EmpID))
+                    if (!EmployeeExists(employee.employeeid))
                     {
                         return NotFound();
                     }
@@ -118,7 +118,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Employee/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null || _context.Employee == null)
             {
@@ -126,7 +126,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmpID == id);
+                .FirstOrDefaultAsync(m => m.employeeid == id);
             if (employee == null)
             {
                 return NotFound();
@@ -138,7 +138,7 @@ namespace EmployeeVotingSystem.Controllers
         // POST: Employee/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Employee == null)
             {
@@ -154,9 +154,9 @@ namespace EmployeeVotingSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool EmployeeExists(int id)
+        private bool EmployeeExists(string id)
         {
-          return (_context.Employee?.Any(e => e.EmpID == id)).GetValueOrDefault();
+          return (_context.Employee?.Any(e => e.employeeid == id)).GetValueOrDefault();
         }
     }
 }

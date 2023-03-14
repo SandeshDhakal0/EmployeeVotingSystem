@@ -9,87 +9,87 @@ using EmployeeVotingSystem.Models;
 
 namespace EmployeeVotingSystem.Controllers
 {
-    public class VoteController : Controller
+    public class VoteRecordController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public VoteController(ApplicationDbContext context)
+        public VoteRecordController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Vote
+        // GET: VoteRecord
         public async Task<IActionResult> Index()
         {
-              return _context.Vote != null ? 
-                          View(await _context.Vote.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Vote'  is null.");
+              return _context.VoteRecord != null ? 
+                          View(await _context.VoteRecord.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.VoteRecord'  is null.");
         }
 
-        // GET: Vote/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: VoteRecord/Details/5
+        public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.Vote == null)
+            if (id == null || _context.VoteRecord == null)
             {
                 return NotFound();
             }
 
-            var vote = await _context.Vote
-                .FirstOrDefaultAsync(m => m.VoteID == id);
-            if (vote == null)
+            var voteRecord = await _context.VoteRecord
+                .FirstOrDefaultAsync(m => m.recordid == id);
+            if (voteRecord == null)
             {
                 return NotFound();
             }
 
-            return View(vote);
+            return View(voteRecord);
         }
 
-        // GET: Vote/Create
+        // GET: VoteRecord/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Vote/Create
+        // POST: VoteRecord/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VoteID,VotingYear,VotingMonth,CandidateID")] Vote vote)
+        public async Task<IActionResult> Create([Bind("recordid,voterid,candidateid,votingyear,votingmonth")] VoteRecord voteRecord)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(vote);
+                _context.Add(voteRecord);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(vote);
+            return View(voteRecord);
         }
 
-        // GET: Vote/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: VoteRecord/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.Vote == null)
+            if (id == null || _context.VoteRecord == null)
             {
                 return NotFound();
             }
 
-            var vote = await _context.Vote.FindAsync(id);
-            if (vote == null)
+            var voteRecord = await _context.VoteRecord.FindAsync(id);
+            if (voteRecord == null)
             {
                 return NotFound();
             }
-            return View(vote);
+            return View(voteRecord);
         }
 
-        // POST: Vote/Edit/5
+        // POST: VoteRecord/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("VoteID,VotingYear,VotingMonth,CandidateID")] Vote vote)
+        public async Task<IActionResult> Edit(string id, [Bind("recordid,voterid,candidateid,votingyear,votingmonth")] VoteRecord voteRecord)
         {
-            if (id != vote.VoteID)
+            if (id != voteRecord.recordid)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace EmployeeVotingSystem.Controllers
             {
                 try
                 {
-                    _context.Update(vote);
+                    _context.Update(voteRecord);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!VoteExists(vote.VoteID))
+                    if (!VoteRecordExists(voteRecord.recordid))
                     {
                         return NotFound();
                     }
@@ -114,49 +114,49 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(vote);
+            return View(voteRecord);
         }
 
-        // GET: Vote/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: VoteRecord/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.Vote == null)
+            if (id == null || _context.VoteRecord == null)
             {
                 return NotFound();
             }
 
-            var vote = await _context.Vote
-                .FirstOrDefaultAsync(m => m.VoteID == id);
-            if (vote == null)
+            var voteRecord = await _context.VoteRecord
+                .FirstOrDefaultAsync(m => m.recordid == id);
+            if (voteRecord == null)
             {
                 return NotFound();
             }
 
-            return View(vote);
+            return View(voteRecord);
         }
 
-        // POST: Vote/Delete/5
+        // POST: VoteRecord/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Vote == null)
+            if (_context.VoteRecord == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Vote'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.VoteRecord'  is null.");
             }
-            var vote = await _context.Vote.FindAsync(id);
-            if (vote != null)
+            var voteRecord = await _context.VoteRecord.FindAsync(id);
+            if (voteRecord != null)
             {
-                _context.Vote.Remove(vote);
+                _context.VoteRecord.Remove(voteRecord);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool VoteExists(int id)
+        private bool VoteRecordExists(string id)
         {
-          return (_context.Vote?.Any(e => e.VoteID == id)).GetValueOrDefault();
+          return (_context.VoteRecord?.Any(e => e.recordid == id)).GetValueOrDefault();
         }
     }
 }

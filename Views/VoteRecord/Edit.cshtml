@@ -1,0 +1,49 @@
+@model EmployeeVotingSystem.Models.VoteRecord
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>VoteRecord</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="recordid" />
+            <div class="form-group">
+                <label asp-for="voterid" class="control-label"></label>
+                <input asp-for="voterid" class="form-control" />
+                <span asp-validation-for="voterid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="candidateid" class="control-label"></label>
+                <input asp-for="candidateid" class="form-control" />
+                <span asp-validation-for="candidateid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="votingyear" class="control-label"></label>
+                <input asp-for="votingyear" class="form-control" />
+                <span asp-validation-for="votingyear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="votingmonth" class="control-label"></label>
+                <input asp-for="votingmonth" class="form-control" />
+                <span asp-validation-for="votingmonth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

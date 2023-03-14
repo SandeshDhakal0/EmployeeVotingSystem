@@ -1,16 +1,17 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EmployeeVotingSystem.Models
 {
-    public class Address
-    {
+	public class Address
+	{
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int AddressID { get; set; }
-
-        public string? PhysicalAddress { get; set; }
+        public string address_id { get; set; }
+        public string street_no { get; set; }
+        public string postal_code { get; set; }
+        public string address_type { get; set; }
+        public string city { get; set; }
+        public string country { get; set; }
 
     }
 }

@@ -55,26 +55,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwYXJ0bWVudC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/DeptManager/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdE1hbmFnZXIvQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/DeptManager/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdE1hbmFnZXIvRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/DeptManager/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdE1hbmFnZXIvRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/DeptManager/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdE1hbmFnZXIvRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/DeptManager/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdE1hbmFnZXIvSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/sandesh/Projects/EmployeeVotingSystem/Views/Email/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1haWwvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -115,6 +95,46 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeAddress/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVBZGRyZXNzL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeAddress/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVBZGRyZXNzL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeAddress/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVBZGRyZXNzL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeAddress/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVBZGRyZXNzL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeAddress/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVBZGRyZXNzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeHistory/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVIaXN0b3J5L0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeHistory/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVIaXN0b3J5L0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeHistory/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVIaXN0b3J5L0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeHistory/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVIaXN0b3J5L0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/EmployeeHistory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWVIaXN0b3J5L0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/sandesh/Projects/EmployeeVotingSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -143,24 +163,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9iL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/JobHistory/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9iSGlzdG9yeS9DcmVhdGUuY3NodG1s
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Manager/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlci9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/JobHistory/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9iSGlzdG9yeS9EZWxldGUuY3NodG1s
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Manager/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlci9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/JobHistory/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9iSGlzdG9yeS9EZXRhaWxzLmNzaHRtbA==
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Manager/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlci9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/JobHistory/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9iSGlzdG9yeS9FZGl0LmNzaHRtbA==
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Manager/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlci9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/JobHistory/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSm9iSGlzdG9yeS9JbmRleC5jc2h0bWw=
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Manager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvTWFuYWdlci9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/sandesh/Projects/EmployeeVotingSystem/Views/Role/Create.cshtml]
@@ -191,24 +211,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Vote/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZS9DcmVhdGUuY3NodG1s
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/VoteRecord/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZVJlY29yZC9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Vote/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZS9EZWxldGUuY3NodG1s
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/VoteRecord/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZVJlY29yZC9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Vote/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZS9EZXRhaWxzLmNzaHRtbA==
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/VoteRecord/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZVJlY29yZC9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Vote/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZS9FZGl0LmNzaHRtbA==
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/VoteRecord/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZVJlY29yZC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/sandesh/Projects/EmployeeVotingSystem/Views/Vote/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZS9JbmRleC5jc2h0bWw=
+[/Users/sandesh/Projects/EmployeeVotingSystem/Views/VoteRecord/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVm90ZVJlY29yZC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/sandesh/Projects/EmployeeVotingSystem/Views/_ViewImports.cshtml]

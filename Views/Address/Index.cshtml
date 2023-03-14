@@ -13,7 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PhysicalAddress)
+                @Html.DisplayNameFor(model => model.street_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.postal_code)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.country)
             </th>
             <th></th>
         </tr>
@@ -22,12 +34,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PhysicalAddress)
+                @Html.DisplayFor(modelItem => item.street_no)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AddressID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AddressID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AddressID">Delete</a>
+                @Html.DisplayFor(modelItem => item.postal_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address_type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.address_id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.address_id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.address_id">Delete</a>
             </td>
         </tr>
 }

@@ -9,87 +9,87 @@ using EmployeeVotingSystem.Models;
 
 namespace EmployeeVotingSystem.Controllers
 {
-    public class DeptManagerController : Controller
+    public class ManagerController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public DeptManagerController(ApplicationDbContext context)
+        public ManagerController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: DeptManager
+        // GET: Manager
         public async Task<IActionResult> Index()
         {
-              return _context.DeptManager != null ? 
-                          View(await _context.DeptManager.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.DeptManager'  is null.");
+              return _context.Manager != null ? 
+                          View(await _context.Manager.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDbContext.Manager'  is null.");
         }
 
-        // GET: DeptManager/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Manager/Details/5
+        public async Task<IActionResult> Details(string id)
         {
-            if (id == null || _context.DeptManager == null)
+            if (id == null || _context.Manager == null)
             {
                 return NotFound();
             }
 
-            var deptManager = await _context.DeptManager
-                .FirstOrDefaultAsync(m => m.DeptID == id);
-            if (deptManager == null)
+            var manager = await _context.Manager
+                .FirstOrDefaultAsync(m => m.departmentid == id);
+            if (manager == null)
             {
                 return NotFound();
             }
 
-            return View(deptManager);
+            return View(manager);
         }
 
-        // GET: DeptManager/Create
+        // GET: Manager/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: DeptManager/Create
+        // POST: Manager/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DeptID,EmployeeID")] DeptManager deptManager)
+        public async Task<IActionResult> Create([Bind("departmentid,managerid")] Manager manager)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(deptManager);
+                _context.Add(manager);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(deptManager);
+            return View(manager);
         }
 
-        // GET: DeptManager/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Manager/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
-            if (id == null || _context.DeptManager == null)
+            if (id == null || _context.Manager == null)
             {
                 return NotFound();
             }
 
-            var deptManager = await _context.DeptManager.FindAsync(id);
-            if (deptManager == null)
+            var manager = await _context.Manager.FindAsync(id);
+            if (manager == null)
             {
                 return NotFound();
             }
-            return View(deptManager);
+            return View(manager);
         }
 
-        // POST: DeptManager/Edit/5
+        // POST: Manager/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DeptID,EmployeeID")] DeptManager deptManager)
+        public async Task<IActionResult> Edit(string id, [Bind("departmentid,managerid")] Manager manager)
         {
-            if (id != deptManager.DeptID)
+            if (id != manager.departmentid)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace EmployeeVotingSystem.Controllers
             {
                 try
                 {
-                    _context.Update(deptManager);
+                    _context.Update(manager);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DeptManagerExists(deptManager.DeptID))
+                    if (!ManagerExists(manager.departmentid))
                     {
                         return NotFound();
                     }
@@ -114,49 +114,49 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(deptManager);
+            return View(manager);
         }
 
-        // GET: DeptManager/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Manager/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
-            if (id == null || _context.DeptManager == null)
+            if (id == null || _context.Manager == null)
             {
                 return NotFound();
             }
 
-            var deptManager = await _context.DeptManager
-                .FirstOrDefaultAsync(m => m.DeptID == id);
-            if (deptManager == null)
+            var manager = await _context.Manager
+                .FirstOrDefaultAsync(m => m.departmentid == id);
+            if (manager == null)
             {
                 return NotFound();
             }
 
-            return View(deptManager);
+            return View(manager);
         }
 
-        // POST: DeptManager/Delete/5
+        // POST: Manager/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.DeptManager == null)
+            if (_context.Manager == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.DeptManager'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Manager'  is null.");
             }
-            var deptManager = await _context.DeptManager.FindAsync(id);
-            if (deptManager != null)
+            var manager = await _context.Manager.FindAsync(id);
+            if (manager != null)
             {
-                _context.DeptManager.Remove(deptManager);
+                _context.Manager.Remove(manager);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DeptManagerExists(int id)
+        private bool ManagerExists(string id)
         {
-          return (_context.DeptManager?.Any(e => e.DeptID == id)).GetValueOrDefault();
+          return (_context.Manager?.Any(e => e.departmentid == id)).GetValueOrDefault();
         }
     }
 }

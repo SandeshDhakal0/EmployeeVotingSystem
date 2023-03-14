@@ -12,21 +12,27 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Job_name)
+            @Html.DisplayNameFor(model => model.jobtitle)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Job_name)
+            @Html.DisplayFor(model => model.jobtitle)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Salary)
+            @Html.DisplayNameFor(model => model.minsalary)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Salary)
+            @Html.DisplayFor(model => model.minsalary)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.maxsalary)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.maxsalary)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Job_ID" />
+        <input type="hidden" asp-for="jobid" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

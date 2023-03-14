@@ -27,7 +27,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Job/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null || _context.Job == null)
             {
@@ -35,7 +35,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var job = await _context.Job
-                .FirstOrDefaultAsync(m => m.Job_ID == id);
+                .FirstOrDefaultAsync(m => m.jobid == id);
             if (job == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Job_ID,Job_name,Salary")] Job job)
+        public async Task<IActionResult> Create([Bind("jobid,jobtitle,minsalary,maxsalary")] Job job)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Job/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null || _context.Job == null)
             {
@@ -87,9 +87,9 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Job_ID,Job_name,Salary")] Job job)
+        public async Task<IActionResult> Edit(string id, [Bind("jobid,jobtitle,minsalary,maxsalary")] Job job)
         {
-            if (id != job.Job_ID)
+            if (id != job.jobid)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!JobExists(job.Job_ID))
+                    if (!JobExists(job.jobid))
                     {
                         return NotFound();
                     }
@@ -118,7 +118,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Job/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null || _context.Job == null)
             {
@@ -126,7 +126,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var job = await _context.Job
-                .FirstOrDefaultAsync(m => m.Job_ID == id);
+                .FirstOrDefaultAsync(m => m.jobid == id);
             if (job == null)
             {
                 return NotFound();
@@ -138,7 +138,7 @@ namespace EmployeeVotingSystem.Controllers
         // POST: Job/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Job == null)
             {
@@ -154,9 +154,9 @@ namespace EmployeeVotingSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool JobExists(int id)
+        private bool JobExists(string id)
         {
-          return (_context.Job?.Any(e => e.Job_ID == id)).GetValueOrDefault();
+          return (_context.Job?.Any(e => e.jobid == id)).GetValueOrDefault();
         }
     }
 }

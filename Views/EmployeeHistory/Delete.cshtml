@@ -1,0 +1,51 @@
+@model EmployeeVotingSystem.Models.EmployeeHistory
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EmployeeHistory</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.employeeid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.employeeid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.departmentid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.departmentid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.roleid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.roleid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.startdate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.startdate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.enddate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.enddate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="historyid" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

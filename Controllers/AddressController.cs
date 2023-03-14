@@ -27,7 +27,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Address/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null || _context.Address == null)
             {
@@ -35,7 +35,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var address = await _context.Address
-                .FirstOrDefaultAsync(m => m.AddressID == id);
+                .FirstOrDefaultAsync(m => m.address_id == id);
             if (address == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AddressID,PhysicalAddress")] Address address)
+        public async Task<IActionResult> Create([Bind("address_id,street_no,postal_code,address_type,city,country")] Address address)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Address/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null || _context.Address == null)
             {
@@ -87,9 +87,9 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AddressID,PhysicalAddress")] Address address)
+        public async Task<IActionResult> Edit(string id, [Bind("address_id,street_no,postal_code,address_type,city,country")] Address address)
         {
-            if (id != address.AddressID)
+            if (id != address.address_id)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!AddressExists(address.AddressID))
+                    if (!AddressExists(address.address_id))
                     {
                         return NotFound();
                     }
@@ -118,7 +118,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Address/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null || _context.Address == null)
             {
@@ -126,7 +126,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var address = await _context.Address
-                .FirstOrDefaultAsync(m => m.AddressID == id);
+                .FirstOrDefaultAsync(m => m.address_id == id);
             if (address == null)
             {
                 return NotFound();
@@ -138,7 +138,7 @@ namespace EmployeeVotingSystem.Controllers
         // POST: Address/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Address == null)
             {
@@ -154,9 +154,9 @@ namespace EmployeeVotingSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool AddressExists(int id)
+        private bool AddressExists(string id)
         {
-          return (_context.Address?.Any(e => e.AddressID == id)).GetValueOrDefault();
+          return (_context.Address?.Any(e => e.address_id == id)).GetValueOrDefault();
         }
     }
 }

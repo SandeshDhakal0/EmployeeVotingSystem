@@ -27,7 +27,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Role/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null || _context.Role == null)
             {
@@ -35,7 +35,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var role = await _context.Role
-                .FirstOrDefaultAsync(m => m.RoleID == id);
+                .FirstOrDefaultAsync(m => m.roleid == id);
             if (role == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("RoleID,RoleName,RoleType,JobID")] Role role)
+        public async Task<IActionResult> Create([Bind("roleid,jobid,title,description")] Role role)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Role/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null || _context.Role == null)
             {
@@ -87,9 +87,9 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("RoleID,RoleName,RoleType,JobID")] Role role)
+        public async Task<IActionResult> Edit(string id, [Bind("roleid,jobid,title,description")] Role role)
         {
-            if (id != role.RoleID)
+            if (id != role.roleid)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!RoleExists(role.RoleID))
+                    if (!RoleExists(role.roleid))
                     {
                         return NotFound();
                     }
@@ -118,7 +118,7 @@ namespace EmployeeVotingSystem.Controllers
         }
 
         // GET: Role/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null || _context.Role == null)
             {
@@ -126,7 +126,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var role = await _context.Role
-                .FirstOrDefaultAsync(m => m.RoleID == id);
+                .FirstOrDefaultAsync(m => m.roleid == id);
             if (role == null)
             {
                 return NotFound();
@@ -138,7 +138,7 @@ namespace EmployeeVotingSystem.Controllers
         // POST: Role/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             if (_context.Role == null)
             {
@@ -154,9 +154,9 @@ namespace EmployeeVotingSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool RoleExists(int id)
+        private bool RoleExists(string id)
         {
-          return (_context.Role?.Any(e => e.RoleID == id)).GetValueOrDefault();
+          return (_context.Role?.Any(e => e.roleid == id)).GetValueOrDefault();
         }
     }
 }

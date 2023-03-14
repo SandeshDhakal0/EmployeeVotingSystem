@@ -35,7 +35,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var email = await _context.Email
-                .FirstOrDefaultAsync(m => m.Email_Address == id);
+                .FirstOrDefaultAsync(m => m.email == id);
             if (email == null)
             {
                 return NotFound();
@@ -55,7 +55,7 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Email_Address,EmployeeID")] Email email)
+        public async Task<IActionResult> Create([Bind("email,age,employeeid")] Email email)
         {
             if (ModelState.IsValid)
             {
@@ -87,9 +87,9 @@ namespace EmployeeVotingSystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Email_Address,EmployeeID")] Email email)
+        public async Task<IActionResult> Edit(string id, [Bind("email,age,employeeid")] Email email)
         {
-            if (id != email.Email_Address)
+            if (id != email.email)
             {
                 return NotFound();
             }
@@ -103,7 +103,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmailExists(email.Email_Address))
+                    if (!EmailExists(email.email))
                     {
                         return NotFound();
                     }
@@ -126,7 +126,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var email = await _context.Email
-                .FirstOrDefaultAsync(m => m.Email_Address == id);
+                .FirstOrDefaultAsync(m => m.email == id);
             if (email == null)
             {
                 return NotFound();
@@ -156,7 +156,7 @@ namespace EmployeeVotingSystem.Controllers
 
         private bool EmailExists(string id)
         {
-          return (_context.Email?.Any(e => e.Email_Address == id)).GetValueOrDefault();
+          return (_context.Email?.Any(e => e.email == id)).GetValueOrDefault();
         }
     }
 }

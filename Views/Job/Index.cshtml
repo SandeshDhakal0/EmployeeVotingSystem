@@ -13,10 +13,13 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Job_name)
+                @Html.DisplayNameFor(model => model.jobtitle)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Salary)
+                @Html.DisplayNameFor(model => model.minsalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.maxsalary)
             </th>
             <th></th>
         </tr>
@@ -25,15 +28,18 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Job_name)
+                @Html.DisplayFor(modelItem => item.jobtitle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Salary)
+                @Html.DisplayFor(modelItem => item.minsalary)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Job_ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Job_ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Job_ID">Delete</a>
+                @Html.DisplayFor(modelItem => item.maxsalary)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.jobid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.jobid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.jobid">Delete</a>
             </td>
         </tr>
 }
