@@ -14,6 +14,10 @@ namespace EmployeeVotingSystem.Models
 		public DbSet<EmployeeVotingSystem.Models.Role>? Role { get; set; }
 		public DbSet<EmployeeVotingSystem.Models.Employee>? Employee { get; set; }
 		public DbSet<EmployeeVotingSystem.Models.DeptManager>? DeptManager { get; set; }
+		public DbSet<EmployeeVotingSystem.Models.JobHistory>? JobHistory { get; set; }
+		public DbSet<EmployeeVotingSystem.Models.Vote>? Vote { get; set; }
+		public DbSet<EmployeeVotingSystem.Models.Email>? Email { get; set; }
+		
 		
 
 
