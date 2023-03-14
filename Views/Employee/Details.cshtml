@@ -1,0 +1,48 @@
+@model EmployeeVotingSystem.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dob)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dob)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.contact)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.contact)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dept_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dept_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.role_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.role_id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.EmpID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
