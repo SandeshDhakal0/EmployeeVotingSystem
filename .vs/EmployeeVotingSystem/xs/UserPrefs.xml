@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{A68B7CEB-EE0B-42D0-A4CB-972BF9B47C49}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Models/Department.cs">
+    <Files>
+      <File FileName="Models/Department.cs" Line="21" Column="1" />
+      <File FileName="Data/ApplicationDbContext.cs" Line="24" Column="3" />
+      <File FileName="Controllers/DepartmentController.cs" Line="14" Column="56" />
+      <File FileName="Models/Role.cs" />
+      <File FileName="Models/Email.cs" />
+      <File FileName="appsettings.json" />
+      <File FileName="Program.cs" />
+      <File FileName="Models/Address.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="EmployeeVotingSystem" expanded="True">
+            <Node name="EmployeeVotingSystem" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Data" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Department.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.EmployeeVotingSystem PreferredExecutionTarget="/Applications/Google Chrome.app" />
+</Properties>
