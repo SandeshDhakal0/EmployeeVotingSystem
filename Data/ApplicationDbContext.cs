@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using EmployeeVotingSystem.Models;
+using System.Data.SqlClient;
 
 namespace EmployeeVotingSystem.Models
 {
@@ -18,14 +19,6 @@ namespace EmployeeVotingSystem.Models
 		public DbSet<EmployeeVotingSystem.Models.Manager>? Manager { get; set; }
 		public DbSet<EmployeeVotingSystem.Models.Role>? Role { get; set; }
 		public DbSet<EmployeeVotingSystem.Models.VoteRecord>? VoteRecord { get; set; }
-		
-		
-		
-
-
-
-		
-		
 
 
     }

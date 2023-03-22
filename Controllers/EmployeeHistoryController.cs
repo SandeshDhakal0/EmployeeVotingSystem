@@ -21,9 +21,8 @@ namespace EmployeeVotingSystem.Controllers
         // GET: EmployeeHistory
         public async Task<IActionResult> Index()
         {
-              return _context.EmployeeHistory != null ? 
-                          View(await _context.EmployeeHistory.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.EmployeeHistory'  is null.");
+            var applicationDbContext = _context.EmployeeHistory.Include(e => e.Employee);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: EmployeeHistory/Details/5
@@ -35,6 +34,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var employeeHistory = await _context.EmployeeHistory
+                .Include(e => e.Employee)
                 .FirstOrDefaultAsync(m => m.historyid == id);
             if (employeeHistory == null)
             {
@@ -47,6 +47,7 @@ namespace EmployeeVotingSystem.Controllers
         // GET: EmployeeHistory/Create
         public IActionResult Create()
         {
+            ViewData["employeeid"] = new SelectList(_context.Employee, "employeeid", "employeeid");
             return View();
         }
 
@@ -63,6 +64,7 @@ namespace EmployeeVotingSystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["employeeid"] = new SelectList(_context.Employee, "employeeid", "employeeid", employeeHistory.employeeid);
             return View(employeeHistory);
         }
 
@@ -79,6 +81,7 @@ namespace EmployeeVotingSystem.Controllers
             {
                 return NotFound();
             }
+            ViewData["employeeid"] = new SelectList(_context.Employee, "employeeid", "employeeid", employeeHistory.employeeid);
             return View(employeeHistory);
         }
 
@@ -114,6 +117,7 @@ namespace EmployeeVotingSystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["employeeid"] = new SelectList(_context.Employee, "employeeid", "employeeid", employeeHistory.employeeid);
             return View(employeeHistory);
         }
 
@@ -126,6 +130,7 @@ namespace EmployeeVotingSystem.Controllers
             }
 
             var employeeHistory = await _context.EmployeeHistory
+                .Include(e => e.Employee)
                 .FirstOrDefaultAsync(m => m.historyid == id);
             if (employeeHistory == null)
             {

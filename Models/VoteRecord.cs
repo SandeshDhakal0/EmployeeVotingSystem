@@ -12,6 +12,8 @@ namespace EmployeeVotingSystem.Models
         public string votingyear { get; set; }
         public string votingmonth { get; set; }
 
+
+
     }
 }
 

@@ -2,168 +2,450 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center" style="background-color: #f5f5f5; padding: 20px;">
-    <h1 class="display-4" style="color: #333;">Employee Center</h1>
-</div>
+@model IEnumerable<EmployeeHistoryViewModel>
+
+@*<div class="text-center" style="background-color: #f5f5f5; padding: 20px;">
+        <h1 class="display-4" style="color: #333;">Employee Center</h1>
+    </div>*@
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-            <div id="employee-card" class="card-counter primary">
-                <i class="fa fa-code-fork"></i>
-                <span class="count-numbers">0</span>
-                <span class="count-name">Employee</span>
-            </div>
-        </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
 
-        <div class="col-md-3">
-            <div id="department-card" class="card-counter danger">
-                <i class="fa fa-ticket"></i>
-                <span class="count-numbers">0</span>
-                <span class="count-name">Department</span>
+@*<div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div id="employee-card" class="card-counter primary">
+                    <i class="fa fa-code-fork"></i>
+                    <span class="count-numbers">0</span>
+                    <span class="count-name">Employee</span>
+                </div>
             </div>
-        </div>
 
-        <div class="col-md-3">
-            <div id="job-card" class="card-counter success">
-                <i class="fa fa-database"></i>
-                <span class="count-numbers">0</span>
-                <span class="count-name">Job</span>
+            <div class="col-md-3">
+                <div id="department-card" class="card-counter danger">
+                    <i class="fa fa-ticket"></i>
+                    <span class="count-numbers">0</span>
+                    <span class="count-name">Department</span>
+                </div>
             </div>
-        </div>
 
-        <div class="col-md-3">
-            <div id="role-card" class="card-counter info">
-                <i class="fa fa-users"></i>
-                <span class="count-numbers">0</span>
-                <span class="count-name">Role</span>
+            <div class="col-md-3">
+                <div id="job-card" class="card-counter success">
+                    <i class="fa fa-database"></i>
+                    <span class="count-numbers">0</span>
+                    <span class="count-name">Job</span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div id="role-card" class="card-counter info">
+                    <i class="fa fa-users"></i>
+                    <span class="count-numbers">0</span>
+                    <span class="count-name">Role</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="record-card" class="card-counter info">
+                    <i class="fa fa-users"></i>
+                    <span class="count-numbers">0</span>
+                    <span class="count-name">Record</span>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div id="manager-card" class="card-counter info">
+                    <i class="fa fa-users"></i>
+                    <span class="count-numbers">0</span>
+                    <span class="count-name">Manager</span>
+                </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div id="record-card" class="card-counter info">
-                <i class="fa fa-users"></i>
-                <span class="count-numbers">0</span>
-                <span class="count-name">Record</span>
+    </div>*@
+
+<div class="col-md-10 ">
+    <div class="row ">
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-cherry">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Employee</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                4
+                            </h2>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div id="manager-card" class="card-counter info">
-                <i class="fa fa-users"></i>
-                <span class="count-numbers">0</span>
-                <span class="count-name">Manager</span>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-blue-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Department</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                5
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-green-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Job</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                5
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-orange-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Role</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                5
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-orange-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Record</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                5
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+            <div class="card l-bg-orange-dark">
+                <div class="card-statistic-3 p-4">
+                    <div class="mb-4">
+                        <h5 class="card-title mb-0">Manager</h5>
+                    </div>
+                    <div class="row align-items-center mb-2 d-flex">
+                        <div class="col-8">
+                            <h2 class="d-flex align-items-center mb-0">
+                                6
+                            </h2>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<ul class="nav nav-tabs mt-5">
+    <li class="nav-item">
+        <a class="nav-link active" id="ehli" href="#">Employee History</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="erli" href="#">Employee Record</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="emli" href="#">Employee of Month</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane active" id="employee-history-table">
+        @*<table class="table" id="employee-history-table">*@
+        <form method="post">
+            <label for="employeeid">Select an employee:</label>
+            <select id="employeeid" name="employeeid">
+                @if (ViewBag.Employees != null)
+                {
+                    @foreach (var employee in ViewBag.Employees)
+                    {
+                        <option value="@employee.employeeid">@employee.employeename</option>
+
+                    }
+                }
+            </select>
+            <button type="submit">Show History</button>
+        </form>
 
 
-<script>
-    $.ajax({
-        url: '/Home/GetEmployeeCount',
-        type: 'GET',
-        success: function (data) {
-            $('#employee-card .count-numbers').text(data);
+        @if (Model != null)
+        {
+            <table class="table" id="employee-history-table">
+                <thead>
+                    <tr>
+                        <th scope="col">HistoryID</th>
+                        <th scope="col">EmployeeID</th>
+                        <th scope="col">EmployeeName</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">DeparmentID</th>
+                        <th scope="col">DeparmentName</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">RoleId</th>
+                        <th scope="col">Startdate</th>
+                        <th scope="col">Enddate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.historyid</td>
+                            <td>@item.employeeid</td>
+                            <td>@item.employeename</td>
+                            <td>@item.dob</td>
+                            <td>@item.departmentid</td>
+                            <td>@item.departmentname</td>
+                            <td>@item.description</td>
+                            <td>@item.roleid</td>
+                            <td>@item.startdate</td>
+                            <td>@item.enddate</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         }
-    });
+    </div>
 
-    $.ajax({
-        url: '/Home/GetDepartmentCount',
-        type: 'GET',
-        success: function (data) {
-            $('#department-card .count-numbers').text(data);
-        }
-    });
-    $.ajax({
-        url: '/Home/GetJobCount',
-        type: 'GET',
-        success: function (data) {
-            $('#job-card .count-numbers').text(data);
-        }
-    });
-    $.ajax({
-        url: '/Home/GetRoleCount',
-        type: 'GET',
-        success: function (data) {
-            $('#role-card .count-numbers').text(data);
-        }
-    });
-    $.ajax({
-        url: '/Home/GetRecordCount',
-        type: 'GET',
-        success: function (data) {
-            $('#record-card .count-numbers').text(data);
-        }
-    });
-    $.ajax({
-        url: '/Home/GetManagerCount',
-        type: 'GET',
-        success: function (data) {
-            $('#manager-card .count-numbers').text(data);
-        }
-    });
-</script>
+    <div class="tab-pane" id="employee-record-table">
+        <table class="table" id="employee-record-table" style="display:none;">
+            <form method="post">
+                <label for="employeeid">Select an employee:</label>
+                <select id="employeeid" name="employeeid">
+                    @if (ViewBag.Employees != null)
+                    {
+                        @foreach (var employee in ViewBag.Employees)
+                        {
+                            <option value="@employee.employeeid">@employee.employeename</option>
+                        }
+                    }
+                </select>
+                <button type="submit">Show History</button>
+            </form>
+            @if (Model != null)
+            {
+                <table class="table" id="employee-record-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">RecordID</th>
+                            <th scope="col">VoterID</th>
+                            <th scope="col">EmployeeName</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Contact</th>
+                            <th scope="col">CandidateID</th>
+                            <th scope="col">CandidateName</th>
+                            <th scope="col">CandidateContact</th>
+                            <th scope="col">VotingYear</th>
+                            <th scope="col">VotingMonth</th>
+                        </tr>
+                    </thead>
+                    @*<tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.recordid</td>
+                                <td>@item.voterid</td>
+                                <td>@item.employeename</td>
+                                <td>@item.dob</td>
+                                <td>@item.contact</td>
+                                <td>@item.candidateid</td>
+                                <td>@item.candidatename</td>
+                                <td>@item.candidatecontact</td>
+                                <td>@item.voteyear</td>
+                                <td>@item.votemonth</td>
+                            </tr>
+                        }
+                    </tbody>*@
+                </table>
+            }
+        </table>
+    </div>
 
-<style>
-    .card-counter {
-        box-shadow: 2px 2px 10px #DADADA;
-        margin: 5px;
-        padding: 20px 10px;
-        background-color: #fff;
-        height: 100px;
-        border-radius: 5px;
-        transition: .3s linear all;
-    }
 
-        .card-counter:hover {
-            box-shadow: 4px 4px 20px #DADADA;
+    <div class="tab-pane" id="employee-month-table">
+        <table class="table" id="employee-month-table" style="display:none;">
+            <thead>
+                <tr>
+                    <th scope="col">CandidateID</th>
+                    <th scope="col">VoteYear</th>
+                    <th scope="col">VoteMonth</th>
+                    <th scope="col">TotalVote</th>
+                    <th scope="col">EmployeeName</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">DepartmentId</th>
+                    <th scope="col">DepartmentName</th>
+                    <th scope="col">RoleID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Emp1</td>
+                    <td>2023</td>
+                    <td>05</td>
+                    <td>4</td>
+                    <td>John Smith</td>
+                    <td>1999-02-03</td>
+                    <td>9876456546</td>
+                    <td>Dep1</td>
+                    <td>Admin</td>
+                    <td>Role1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script>$(document).ready(function () {
+            $('#ehli').click(function () {
+                $('#employee-history-table').show();
+                $('#employee-record-table').hide();
+                $('#employee-month-table').hide();
+            });
+
+            $('#erli').click(function () {
+                $('#employee-history-table').hide();
+                $('#employee-record-table').show();
+                $('#employee-month-table').hide();
+            });
+
+            $('#emli').click(function () {
+                $('#employee-history-table').hide();
+                $('#employee-record-table').hide();
+                $('#employee-month-table').show();
+            });
+        });</script>
+
+
+    <script>$.ajax({
+            url: '/Home/GetEmployeeCount',
+            type: 'GET',
+            success: function (data) {
+                $('#employee-card .count-numbers').text(data);
+            }
+        });
+
+        $.ajax({
+            url: '/Home/GetDepartmentCount',
+            type: 'GET',
+            success: function (data) {
+                $('#department-card .count-numbers').text(data);
+            }
+        });
+        $.ajax({
+            url: '/Home/GetJobCount',
+            type: 'GET',
+            success: function (data) {
+                $('#job-card .count-numbers').text(data);
+            }
+        });
+        $.ajax({
+            url: '/Home/GetRoleCount',
+            type: 'GET',
+            success: function (data) {
+                $('#role-card .count-numbers').text(data);
+            }
+        });
+        $.ajax({
+            url: '/Home/GetRecordCount',
+            type: 'GET',
+            success: function (data) {
+                $('#record-card .count-numbers').text(data);
+            }
+        });
+        $.ajax({
+            url: '/Home/GetManagerCount',
+            type: 'GET',
+            success: function (data) {
+                $('#manager-card .count-numbers').text(data);
+            }
+        });</script>
+
+    <style>
+        .card-counter {
+            box-shadow: 2px 2px 10px #DADADA;
+            margin: 5px;
+            padding: 20px 10px;
+            background-color: #fff;
+            height: 100px;
+            border-radius: 5px;
             transition: .3s linear all;
         }
 
-        .card-counter.primary {
-            background-color: #007bff;
-            color: #FFF;
-        }
+            .card-counter:hover {
+                box-shadow: 4px 4px 20px #DADADA;
+                transition: .3s linear all;
+            }
 
-        .card-counter.danger {
-            background-color: #ef5350;
-            color: #FFF;
-        }
+            .card-counter.primary {
+                background-color: #007bff;
+                color: #FFF;
+            }
 
-        .card-counter.success {
-            background-color: #66bb6a;
-            color: #FFF;
-        }
+            .card-counter.danger {
+                background-color: #ef5350;
+                color: #FFF;
+            }
 
-        .card-counter.info {
-            background-color: #26c6da;
-            color: #FFF;
-        }
+            .card-counter.success {
+                background-color: #66bb6a;
+                color: #FFF;
+            }
 
-        .card-counter i {
-            font-size: 5em;
-            opacity: 0.2;
-        }
+            .card-counter.info {
+                background-color: #26c6da;
+                color: #FFF;
+            }
 
-        .card-counter .count-numbers {
-            position: absolute;
-            right: 35px;
-            top: 20px;
-            font-size: 32px;
-            display: block;
-        }
+            .card-counter i {
+                font-size: 5em;
+                opacity: 0.2;
+            }
 
-        .card-counter .count-name {
-            position: absolute;
-            right: 35px;
-            top: 65px;
-            font-style: italic;
-            text-transform: capitalize;
-            opacity: 0.5;
-            display: block;
-            font-size: 18px;
-        }
-</style>
+            .card-counter .count-numbers {
+                position: absolute;
+                right: 35px;
+                top: 20px;
+                font-size: 32px;
+                display: block;
+            }
+
+            .card-counter .count-name {
+                position: absolute;
+                right: 35px;
+                top: 65px;
+                font-style: italic;
+                text-transform: capitalize;
+                opacity: 0.5;
+                display: block;
+                font-size: 18px;
+            }
+    </style>
 

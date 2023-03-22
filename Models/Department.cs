@@ -8,6 +8,7 @@ namespace EmployeeVotingSystem.Models
         [Key]
         public string departmentid { get; set; }
         public string departmentname { get; set; }
+        public string description { get; set; }
        
     }
 }

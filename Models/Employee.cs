@@ -13,6 +13,9 @@ namespace EmployeeVotingSystem.Models
         public string roleid { get; set; }
         public string departmentid { get; set; }
 
+
+
+
     }
 }
 
